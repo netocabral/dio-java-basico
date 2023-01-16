@@ -1,0 +1,24 @@
+Desafio
+O seu amigo quer verificar quais os imóveis estão disponíveis em uma certa corretora na região onde ele mora. A corretora disponibilizou uma API para ele, mas como ele não entende nada de programação, pediu a sua ajuda. Para deixar tudo bonitinho, você resolveu criar um aplicativo para seu querido amigo, mas quando foi olhar a API retornava os dados de uma forma esquisita, separado por barras. Ajude seu amigo deixando a informação mais amigável possível.
+
+Entrada
+A entrada será a classificação do imóvel, o valor do aluguel dele e se ele está disponível no momento.
+
+Saída
+A saída deverá ser as informações da entrada, porém de uma forma mais amigável.
+
+import java.util.Scanner; 
+
+public class Program {
+    public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
+        String input = leitor.next();
+        String[] parts = input.split("/"); // separa a string de entrada pelo caractere "/"
+        
+        String tipoImovel = parts[0];
+        int valor = Integer.parseInt(parts[1]);
+        String disponibilidade = parts[2];
+        
+        System.out.println("Imovel: " + tipoImovel + " R$" + valor + " " + disponibilidade);
+    }
+}
